@@ -1,15 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
+  lastScroll: number;
+  justLoaded: boolean;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private router: Router) {
+    this.justLoaded = true;
   }
 
+  ngOnInit(): void {
+    this.lastScroll =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    console.log('initial offset', this.lastScroll);
+
+    setTimeout(() => (this.justLoaded = false), 1000 * 0.1);
+  }
+
+  @HostListener('window:scroll', []) // for window scroll events
+  onScroll() {
+    if (!this.justLoaded) {
+      const verticalOffset =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+
+      if (verticalOffset > this.lastScroll) {
+        console.log('going down!!');
+        this.router.navigateByUrl('/about');
+      } else if (verticalOffset < this.lastScroll) {
+        console.log('going up!!');
+      }
+      this.lastScroll = verticalOffset;
+    }
+
+    // console.log(verticalOffset);
+  }
 }

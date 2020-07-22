@@ -1,0 +1,57 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 7%;
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    text-align: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-top: 0.4rem double white;
+    border-left: 0.4rem double white;
+    transition: all 0.2s;
+
+    &::after {
+      content: "";
+      display: inline-block; /* to show the pseudoelement */
+      height: 100%;
+      width: 100%;
+      border-top: 0.4rem double white;
+      border-left: 0.4rem double white;
+      margin-top: 2rem;
+      margin-left: 2rem;
+    }
+
+    &--up {
+      position: absolute;
+      top: 4rem;
+      transform: rotate(45deg);
+
+      &:active {
+        transform: scale(1.05) translateY(0.7rem) rotate(45deg);
+      }
+
+      &:hover {
+        transform: scale(1.1) rotate(45deg);
+      }
+    }
+
+    &--down {
+      position: absolute;
+      bottom: 4rem;
+      transform: rotate(-135deg);
+
+      &:active {
+        transform: scale(1.05) translateY(0.7rem) rotate(-135deg);
+      }
+
+      &:hover {
+        transform: scale(1.1) rotate(-135deg);
+      }
+    }
+  }
+}

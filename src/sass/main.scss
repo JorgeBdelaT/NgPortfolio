@@ -11,13 +11,12 @@
 @import "base/utilities";
 
 // IMPORT COMPONENTS
-// @import "components/";
+@import "components/header";
+@import "components/navigation";
+@import "components/sidebar";
 
 // IMPORT LAYOUT
 @import "layout/grid";
-@import "layout/header";
-@import "layout/navigation";
-@import "layout/sidebar";
 
 // IMPORT PAGES
 @import "pages/about-me";

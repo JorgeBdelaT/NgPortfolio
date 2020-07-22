@@ -2,11 +2,11 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-contact-page',
-  templateUrl: './contact-page.component.html',
-  styleUrls: ['./contact-page.component.scss'],
+  selector: 'app-about-me-page',
+  templateUrl: './about-me-page.component.html',
+  styleUrls: ['./about-me-page.component.scss'],
 })
-export class ContactPageComponent implements OnInit {
+export class AboutMePageComponent implements OnInit {
   lastScroll: number;
   justLoaded: boolean;
 
@@ -37,11 +37,14 @@ export class ContactPageComponent implements OnInit {
 
       if (verticalOffset > this.lastScroll) {
         console.log('going down!!');
+        this.router.navigateByUrl('/whatido');
       } else if (verticalOffset < this.lastScroll) {
-        this.router.navigateByUrl('/projects');
+        this.router.navigateByUrl('/');
         console.log('going up!!');
       }
       this.lastScroll = verticalOffset;
     }
+
+    // console.log(verticalOffset);
   }
 }

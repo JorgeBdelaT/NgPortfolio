@@ -13,4 +13,24 @@
     background-clip: text;
     color: transparent;
   }
+
+  .navbar {
+    border-right: 2px solid $color-primary-light;
+
+    &__item {
+      background-image: $color-gradient-main;
+      display: inline-block;
+      background-clip: text;
+      color: transparent;
+
+      &--active {
+        border-bottom: 2px solid $color-primary-dark;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        border-bottom: 2px solid $color-primary-dark;
+      }
+    }
+  }
 }

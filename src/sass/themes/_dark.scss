@@ -9,4 +9,21 @@
   .header__logo {
     color: $color-white;
   }
+
+  .navbar {
+    border-right: 2px solid $color-white;
+
+    &__item {
+      color: $color-white;
+
+      &--active {
+        border-bottom: 2px solid $color-white;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        border-bottom: 2px solid $color-white;
+      }
+    }
+  }
 }

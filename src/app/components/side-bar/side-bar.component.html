@@ -1,4 +1,17 @@
 <div class="sidebar">
-  <a [routerLink]="upRoute" class="sidebar__link sidebar__link--up"></a>
-  <a [routerLink]="downRoute" class="sidebar__link sidebar__link--down"></a>
+  <a
+    *ngIf="showUp"
+    [routerLink]="upRoute"
+    class="sidebar__link sidebar__link--up"
+  ></a>
+  <a
+    *ngIf="showDown"
+    [routerLink]="downRoute"
+    class="sidebar__link sidebar__link--down"
+  ></a>
+  <a
+    *ngIf="showMain"
+    [routerLink]="downRoute"
+    class="sidebar__link sidebar__link--main"
+  ></a>
 </div>

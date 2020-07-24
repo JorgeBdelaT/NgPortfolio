@@ -1,7 +1,8 @@
 <main
   [ngClass]="{ dark: getTheme() === 'dark', light: getTheme() === 'light' }"
 >
-  <app-side-bar></app-side-bar>
   <app-header></app-header>
+  <app-nav-bar></app-nav-bar>
+  <app-side-bar></app-side-bar>
   <router-outlet></router-outlet>
 </main>

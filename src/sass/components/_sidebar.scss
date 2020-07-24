@@ -51,5 +51,17 @@
         transform: scale(1.1) rotate(-135deg);
       }
     }
+
+    &--main {
+      position: absolute;
+      bottom: 6vh;
+      right: 700%;
+      transform: rotate(-135deg) scale(1.5);
+      animation: blink 1.5s infinite;
+
+      &:hover {
+        transform: rotate(-135deg) scale(1.8);
+      }
+    }
   }
 }

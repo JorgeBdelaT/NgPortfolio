@@ -9,9 +9,11 @@ import { Location } from '@angular/common';
 })
 export class NavigationService {
   public previousRoutePath = new BehaviorSubject<string>('');
+  public currentUrl = new BehaviorSubject<string>('/');
 
   constructor(private router: Router, private location: Location) {
     this.previousRoutePath.next(this.location.path());
+    this.currentUrl.next(this.location.path());
 
     this.router.events
       .pipe(
@@ -19,6 +21,7 @@ export class NavigationService {
         pairwise()
       )
       .subscribe((event: any[]) => {
+        this.currentUrl.next(event[1].url);
         this.previousRoutePath.next(event[0].urlAfterRedirects);
       });
   }

@@ -1,1 +1,45 @@
-<p>nav-bar works!</p>
+<nav class="navbar" *ngIf="show">
+  <a
+    routerLink=""
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >home</a
+  >
+  <a
+    routerLink="about"
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    >about me</a
+  >
+  <a
+    routerLink="whatido"
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    >what i do</a
+  >
+  <a
+    routerLink="skills"
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    >skills</a
+  >
+  <a
+    routerLink="experience"
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    >experience</a
+  >
+  <a
+    routerLink="projects"
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    >projects</a
+  >
+  <a
+    routerLink="contact"
+    routerLinkActive="navbar__item--active"
+    class="navbar__item"
+    >contact</a
+  >
+</nav>

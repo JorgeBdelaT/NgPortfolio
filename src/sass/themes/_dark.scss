@@ -1,0 +1,12 @@
+.dark {
+  background-image: $color-gradient-main;
+  .sidebar__link,
+  .sidebar__link::after {
+    border-top: 0.4rem double $color-white;
+    border-left: 0.4rem double $color-white;
+  }
+
+  .header__logo {
+    color: $color-white;
+  }
+}

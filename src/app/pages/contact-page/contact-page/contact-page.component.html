@@ -1,3 +1,9 @@
-<section class="contact">
+<section
+  class="contact"
+  [ngClass]="{
+    'scroll-up': scrollDirection === 'up',
+    'scroll-down': scrollDirection === 'down'
+  }"
+>
   <p>contact-page works!</p>
 </section>

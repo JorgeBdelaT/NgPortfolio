@@ -18,20 +18,5 @@
     &:hover {
       transform: scale(1.05);
     }
-
-    &--gradient {
-      background-image: linear-gradient(
-        to right,
-        rgb(228, 41, 172),
-        rgb(100, 17, 209)
-      );
-      display: inline-block;
-      background-clip: text;
-      color: transparent;
-    }
-
-    &--plain {
-      color: #fff;
-    }
   }
 }

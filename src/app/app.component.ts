@@ -29,4 +29,15 @@ export class AppComponent {
   ngAfterViewInit() {
     this.viewportScroller.scrollToPosition(this.scrollPosition);
   }
+
+  getTheme(): string {
+    const url = this.router.url;
+    if (url === '/' || url === '/whatido') {
+      return 'dark';
+    } else if (url === '/about' || url === '/skills') {
+      return 'light';
+    } else {
+      return 'dark';
+    }
+  }
 }

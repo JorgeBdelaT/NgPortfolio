@@ -41,3 +41,44 @@
     transform: translateY(0);
   }
 }
+
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+
+  80% {
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  80% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-up {
+  animation: scrollUp 0.5s ease-out;
+  animation-fill-mode: backwards;
+}
+.scroll-down {
+  animation: scrollDown 0.5s ease-out;
+  animation-fill-mode: backwards;
+}

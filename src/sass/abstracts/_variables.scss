@@ -1,18 +1,15 @@
 // COLORS
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
-$color-terciary-light: #2998ff;
-$color-terciary-dark: #5643fa;
-$color-grey-dark: #777;
-$color-grey-dark-2: #999;
-$color-grey-dark-3: #333;
-$color-grey-light-1: #f7f7f7;
-$color-grey-light-2: #eee;
+
+$color-primary-light: rgba(187, 116, 212, 1);
+$color-primary-dark: rgba(113, 95, 253, 1);
 $color-white: #fff;
 $color-black: #000;
+
+$color-gradient-main: linear-gradient(
+  135deg,
+  rgba(187, 116, 212, 1) 15%,
+  rgba(113, 95, 253, 1) 100%
+);
 
 // GRID
 $grid-width: 114rem; // es una convencion usar 1140px

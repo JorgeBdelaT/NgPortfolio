@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutMePageComponent } from './pages/about-me-page/about-me-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: 'about',
-    // loadChildren: () =>
-    //   import('./pages/about-me-page/about-me-page.module').then(
-    //     (m) => m.AboutMePageModule
-    //   ),
-    component: AboutMePageComponent,
+    loadChildren: () =>
+      import('./pages/about-me-page/about-me-page.module').then(
+        (m) => m.AboutMePageModule
+      ),
   },
   {
     path: 'whatido',

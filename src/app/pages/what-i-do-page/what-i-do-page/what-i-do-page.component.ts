@@ -1,5 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
+
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-what-i-do-page.component',
@@ -9,8 +12,13 @@ import { Router } from '@angular/router';
 export class WhatIDoPageComponent implements OnInit {
   lastScroll: number;
   justLoaded: boolean;
+  scrollDirection: string;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private viewportScroller: ViewportScroller,
+    private navigationService: NavigationService
+  ) {
     this.justLoaded = true;
   }
 
@@ -21,7 +29,13 @@ export class WhatIDoPageComponent implements OnInit {
       document.body.scrollTop ||
       0;
 
-    console.log('initial offset', this.lastScroll);
+    this.navigationService.previousRoutePath.subscribe((prev) => {
+      if (prev === '/about') {
+        this.scrollDirection = 'down';
+      } else if (prev === '/skills') {
+        this.scrollDirection = 'up';
+      }
+    });
 
     setTimeout(() => (this.justLoaded = false), 1000 * 0.1);
   }
@@ -36,15 +50,13 @@ export class WhatIDoPageComponent implements OnInit {
         0;
 
       if (verticalOffset > this.lastScroll) {
-        console.log('going down!!');
         this.router.navigateByUrl('/skills');
       } else if (verticalOffset < this.lastScroll) {
         this.router.navigateByUrl('/about');
-        console.log('going up!!');
       }
       this.lastScroll = verticalOffset;
+    } else {
+      this.viewportScroller.scrollToPosition([0, 10]);
     }
-
-    // console.log(verticalOffset);
   }
 }

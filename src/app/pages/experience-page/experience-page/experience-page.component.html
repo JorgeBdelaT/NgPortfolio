@@ -1,3 +1,9 @@
-<section class="experience">
+<section
+  class="experience"
+  [ngClass]="{
+    'scroll-up': scrollDirection === 'up',
+    'scroll-down': scrollDirection === 'down'
+  }"
+>
   <p>experience-page works!</p>
 </section>

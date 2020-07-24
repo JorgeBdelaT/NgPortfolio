@@ -12,10 +12,8 @@ export class SideBarComponent implements OnInit {
   downRoute: string;
 
   constructor(private router: Router) {
-    console.log(this.router);
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
-        console.log(e.url);
         this.upRoute = Pages[e.url].up;
         this.downRoute = Pages[e.url].down;
       }

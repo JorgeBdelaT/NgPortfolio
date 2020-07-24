@@ -1,0 +1,16 @@
+.light {
+  background-image: $color-white;
+
+  .sidebar__link,
+  .sidebar__link::after {
+    border-top: 0.4rem double $color-primary-dark;
+    border-left: 0.4rem double $color-primary-dark;
+  }
+
+  .header__logo {
+    background-image: $color-gradient-main;
+    display: inline-block;
+    background-clip: text;
+    color: transparent;
+  }
+}

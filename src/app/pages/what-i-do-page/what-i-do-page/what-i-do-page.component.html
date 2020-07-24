@@ -1,3 +1,9 @@
-<section class="what-i-do">
+<section
+  class="what-i-do"
+  [ngClass]="{
+    'scroll-up': scrollDirection === 'up',
+    'scroll-down': scrollDirection === 'down'
+  }"
+>
   <p>what-i-do-page works!</p>
 </section>

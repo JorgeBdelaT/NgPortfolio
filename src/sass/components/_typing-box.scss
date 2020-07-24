@@ -1,0 +1,38 @@
+.typing-box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40vh;
+  left: 30vh;
+}
+
+.typing {
+  font-family: "Courier Prime", monospace;
+  font-size: 2.5rem;
+  display: inline;
+  overflow: hidden;
+  white-space: nowrap;
+  color: $color-white;
+
+  border-right: 2px solid $color-white;
+  box-sizing: border-box;
+  padding-right: 4px;
+}
+
+.blink {
+  animation: typingBlink 0.75s step-end infinite;
+}
+
+.not-last {
+  border-right: none;
+}
+
+@keyframes typingBlink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: $color-white;
+  }
+}

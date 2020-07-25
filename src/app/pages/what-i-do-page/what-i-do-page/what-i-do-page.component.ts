@@ -14,6 +14,27 @@ export class WhatIDoPageComponent implements OnInit {
   justLoaded: boolean;
   scrollDirection: string;
 
+  cards = [
+    {
+      title: 'web development',
+      icon: 'fa fa-code',
+      content:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facere vero quia molestias explicabo sunt autem cumque voluptatum eius repudiandae. Rem nisi in dolor cupiditate nesciunt officia quibusdam iste nam.',
+    },
+    {
+      title: 'web architecture',
+      icon: 'fa fa-cubes',
+      content:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facere vero quia molestias explicabo sunt autem cumque voluptatum eius repudiandae. Rem nisi in dolor cupiditate nesciunt officia quibusdam iste nam.',
+    },
+    {
+      title: 'user centered design',
+      icon: 'fa fa-users',
+      content:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facere vero quia molestias explicabo sunt autem cumque voluptatum eius repudiandae. Rem nisi in dolor cupiditate nesciunt officia quibusdam iste nam.',
+    },
+  ];
+
   constructor(
     private router: Router,
     private viewportScroller: ViewportScroller,

@@ -1,9 +1,11 @@
 <section
-  class="what-i-do"
+  class="whatido"
   [ngClass]="{
     'scroll-up': scrollDirection === 'up',
     'scroll-down': scrollDirection === 'down'
   }"
 >
-  <p>what-i-do-page works!</p>
+  <div class="whatido__content">
+    <app-card *ngFor="let card of cards" [card]="card"></app-card>
+  </div>
 </section>

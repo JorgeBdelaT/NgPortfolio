@@ -8,6 +8,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { TypingBoxComponent } from './typing-box/typing-box.component';
 import { TypingComponent } from './typing-box/typing/typing.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TypingComponent } from './typing-box/typing/typing.component';
     SideBarComponent,
     TypingBoxComponent,
     TypingComponent,
+    CardComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -25,6 +27,7 @@ import { TypingComponent } from './typing-box/typing/typing.component';
     NotFoundComponent,
     SideBarComponent,
     TypingBoxComponent,
+    CardComponent,
   ],
 })
 export class ComponentsModule {}

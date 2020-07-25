@@ -48,7 +48,6 @@ export class ContactPageComponent implements OnInit {
         0;
 
       if (verticalOffset > this.lastScroll) {
-        return;
       } else if (verticalOffset < this.lastScroll) {
         this.router.navigateByUrl('/projects');
       }

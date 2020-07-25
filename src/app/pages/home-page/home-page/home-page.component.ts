@@ -49,12 +49,12 @@ export class HomePageComponent implements OnInit {
 
       if (verticalOffset > this.lastScroll) {
         this.router.navigateByUrl('/about');
-      } else if (verticalOffset < this.lastScroll) return;
+      } else if (verticalOffset < this.lastScroll) {
+        this.viewportScroller.scrollToPosition([0, 10]);
+      }
       this.lastScroll = verticalOffset;
     } else {
       this.viewportScroller.scrollToPosition([0, 10]);
     }
-
-    // console.log(verticalOffset);
   }
 }

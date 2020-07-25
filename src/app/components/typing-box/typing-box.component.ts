@@ -25,7 +25,7 @@ export class TypingBoxComponent implements OnInit {
 
   currentLine = 0;
   loopTime = 1000 * 10;
-  initialDelay = 1000 * 1.5;
+  initialDelay = 1000 * 1;
 
   constructor(private resolver: ComponentFactoryResolver) {}
 

@@ -27,7 +27,7 @@ export class AboutMePageComponent implements OnInit {
       window.pageYOffset ||
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
-      0;
+      5;
 
     this.navigationService.previousRoutePath.subscribe((prev) => {
       if (prev === '/') {

@@ -59,9 +59,11 @@
       transform: rotate(-135deg) scale(1.5);
       animation: blink 2s infinite;
       animation-delay: 11s;
+      // animation-delay: 1s;
       animation-fill-mode: backwards;
 
       &:hover {
+        animation: none;
         transform: rotate(-135deg) scale(1.8);
       }
     }

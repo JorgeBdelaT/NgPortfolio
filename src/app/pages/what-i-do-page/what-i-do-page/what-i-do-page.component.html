@@ -5,7 +5,9 @@
     'scroll-down': scrollDirection === 'down'
   }"
 >
-  <div class="whatido__content">
-    <app-card *ngFor="let card of cards" [card]="card"></app-card>
+  <div class="content">
+    <div class="whatido__content">
+      <app-card *ngFor="let card of cards" [card]="card"></app-card>
+    </div>
   </div>
 </section>

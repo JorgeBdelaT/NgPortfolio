@@ -11,7 +11,19 @@
   }
 
   .navbar {
-    border-right: 2px solid $color-white;
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 50%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      transform: translateY(50%);
+      border-right: 2px solid $color-white;
+      z-index: -1;
+    }
 
     &__item {
       color: $color-white;

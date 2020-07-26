@@ -15,7 +15,6 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.navigationService.currentUrl.subscribe((url) => {
       url === '/' || url === '' ? (this.show = false) : (this.show = true);
-      console.log(this.show);
     });
   }
 }

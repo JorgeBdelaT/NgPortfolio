@@ -1,15 +1,9 @@
 .whatido {
-  top: 19rem;
-  left: 30rem;
-
   &__content {
-    position: absolute;
+    @include absCenter;
 
-    width: 140rem;
-    height: 60vh;
-    padding: 2rem;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding-top: 8.3rem;
+    justify-content: space-around;
   }
 }

@@ -18,14 +18,11 @@ body {
 
 main {
   position: relative;
+  height: 104vh;
 }
 
 section {
-  height: 104vh;
-  padding: 3rem;
-  margin-top: -55vh;
-  margin-left: 22vh;
-  padding-top: 8vh;
-
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

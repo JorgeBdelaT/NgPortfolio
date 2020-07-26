@@ -2,23 +2,28 @@
   position: sticky;
   top: 50%;
   left: 5%;
-  width: 20vh;
+  width: 25rem;
   height: 50vh;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-
   text-transform: uppercase;
+  z-index: 10;
 
   &__item {
     margin-right: 4rem;
     text-decoration: none;
     display: flex;
-    margin-bottom: 3rem;
+
     font-weight: 600;
     transition: all 0.2s;
     letter-spacing: 2px;
+    margin-bottom: 3rem;
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 }

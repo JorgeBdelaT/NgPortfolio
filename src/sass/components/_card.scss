@@ -10,7 +10,7 @@
   color: $color-white;
 
   padding: 3rem;
-  width: 40rem;
+  width: 38rem;
   height: 45rem;
 
   &__side {
@@ -28,7 +28,6 @@
 
     &--back {
       transform: rotateY(180deg);
-      // background-color: $color-primary-light;
       background-color: $color-white;
       padding: 2.5rem;
       line-height: 2;

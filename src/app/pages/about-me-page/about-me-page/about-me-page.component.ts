@@ -37,7 +37,7 @@ export class AboutMePageComponent implements OnInit {
       }
     });
 
-    setTimeout(() => (this.justLoaded = false), 1000 * 0.1);
+    setTimeout(() => (this.justLoaded = false), 1000 * 0.5);
   }
 
   @HostListener('window:scroll', [])

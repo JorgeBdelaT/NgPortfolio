@@ -1,20 +1,17 @@
 .sidebar {
-  position: sticky;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 7%;
+  position: fixed;
+  top: 0rem;
+  right: 0rem;
+  width: $sidebar-width;
+  height: 102vh;
   display: flex;
   justify-content: center;
-  margin-top: -100vh;
-  margin-left: 180vh;
   z-index: 10;
 
   &__link {
     text-align: center;
     width: 4rem;
     height: 4rem;
-    transition: all 0.2s;
 
     &::after {
       content: "";
@@ -41,7 +38,7 @@
 
     &--down {
       position: absolute;
-      bottom: 4rem;
+      bottom: 5.5rem;
       transform: rotate(-135deg);
 
       &:active {
@@ -54,9 +51,9 @@
     }
 
     &--main {
-      position: absolute;
-      bottom: 6vh;
-      right: 700%;
+      position: fixed;
+      bottom: 5rem;
+      right: 50%;
       transform: rotate(-135deg) scale(1.5);
 
       &:hover {

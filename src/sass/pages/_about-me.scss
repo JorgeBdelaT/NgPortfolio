@@ -1,19 +1,20 @@
 .about {
   &-content {
-    width: 90%;
-    height: 80%;
+    width: 80%;
+    height: 76%;
     background-image: $color-gradient-main;
-    padding: 6rem;
+    padding: 2rem;
 
     @include absCenter;
     display: flex;
+    position: relative;
 
     &__text-box {
-      width: 45%;
+      width: 50%;
       height: 100%;
       background-color: transparent;
-      margin-right: 9rem;
-      padding: 2.5rem;
+      margin-right: 2%;
+      padding: 2rem;
       padding-top: 0;
       color: $color-white;
 
@@ -22,7 +23,7 @@
         text-transform: uppercase;
         text-align: center;
         letter-spacing: 4px;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
       }
 
       &__paragraph {
@@ -36,8 +37,8 @@
 
     &__img-box {
       width: 45%;
-      height: 100%;
-      box-shadow: 2rem 2rem 0 $color-white;
+      height: 97%;
+      box-shadow: 1rem 1rem 0 $color-white;
 
       &__img {
         width: 100%;

@@ -1,8 +1,10 @@
 .content {
   position: absolute;
-  left: 20rem; // navbar width
-  top: 9rem; // header height
-  width: calc(100% - 30rem);
-  height: calc(95% - 9rem);
+  left: 16rem; // navbar width
+  top: 5rem; // header height
+  width: 84%;
+  height: 85%;
   padding: 2rem 3rem;
+
+  // border: 1px solid mediumaquamarine;
 }

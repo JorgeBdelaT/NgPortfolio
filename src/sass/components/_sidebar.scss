@@ -10,21 +10,21 @@
 
   &__link {
     text-align: center;
-    width: 4rem;
-    height: 4rem;
+    width: 2rem;
+    height: 2rem;
 
     &::after {
       content: "";
       display: inline-block;
       height: 100%;
       width: 100%;
-      margin-top: 1.5rem;
-      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
     }
 
     &--up {
       position: absolute;
-      top: 4rem;
+      top: 2rem;
       transform: rotate(45deg);
 
       &:active {
@@ -38,7 +38,7 @@
 
     &--down {
       position: absolute;
-      bottom: 5.5rem;
+      bottom: 3rem;
       transform: rotate(-135deg);
 
       &:active {
@@ -52,7 +52,7 @@
 
     &--main {
       position: fixed;
-      bottom: 5rem;
+      bottom: 3rem;
       right: 50%;
       transform: rotate(-135deg) scale(1.5);
 

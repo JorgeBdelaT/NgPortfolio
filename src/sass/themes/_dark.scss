@@ -2,8 +2,8 @@
   background-image: $color-gradient-main;
   .sidebar__link,
   .sidebar__link::after {
-    border-top: 0.4rem double $color-white;
-    border-left: 0.4rem double $color-white;
+    border-top: 0.2rem double $color-white;
+    border-left: 0.2rem double $color-white;
   }
 
   .header__logo {
@@ -14,14 +14,14 @@
     &::after {
       content: "";
       display: inline-block;
-      height: 50%;
+      height: 35%;
       width: 100%;
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
 
-      transform: translateY(50%);
-      border-right: 2px solid $color-white;
+      transform: translateY(-50%);
+      border-right: 1px solid $color-white;
       z-index: -1;
     }
 
@@ -29,12 +29,12 @@
       color: $color-white;
 
       &--active {
-        border-bottom: 2px solid $color-white;
+        border-bottom: 1px solid $color-white;
       }
 
       &:hover {
         transform: scale(1.05);
-        border-bottom: 2px solid $color-white;
+        border-bottom: 1px solid $color-white;
       }
     }
   }

@@ -10,16 +10,17 @@ export class TimelineComponent implements OnInit {
   currentEvent;
   eventsToShow = 4; // number of events to show at one time
   displayingEvents: any[];
+  moveDir = '';
 
   constructor() {}
 
   ngOnInit(): void {
     this.currentEvent = this.events[0];
     this.displayingEvents = this.events.slice(0, this.eventsToShow);
-    console.log(this.displayingEvents);
   }
 
   displayEvents(dir: string) {
+    this.moveDir = dir;
     if (dir === 'left') {
       const leftEvent = this.displayingEvents[0];
 
@@ -28,13 +29,6 @@ export class TimelineComponent implements OnInit {
       this.displayingEvents = this.events.slice(
         leftEvent.id - 1,
         leftEvent.id + this.eventsToShow - 1
-      );
-      console.log(
-        'next events:',
-        this.events.slice(
-          leftEvent.id - 1,
-          leftEvent.id + this.eventsToShow - 1
-        )
       );
     } else if (dir === 'right') {
       const leftEvent = this.displayingEvents[0];
@@ -45,14 +39,6 @@ export class TimelineComponent implements OnInit {
       this.displayingEvents = this.events.slice(
         leftEvent.id + 1,
         leftEvent.id + this.eventsToShow + 1
-      );
-
-      console.log(
-        'next events:',
-        this.events.slice(
-          leftEvent.id + 1,
-          leftEvent.id + this.eventsToShow + 1
-        )
       );
     }
   }

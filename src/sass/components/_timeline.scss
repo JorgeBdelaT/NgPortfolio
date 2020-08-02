@@ -3,18 +3,16 @@
   color: $color-white;
   width: 100%;
   height: 100%;
+  padding-top: 2rem;
 
   &__line {
     position: absolute;
-    top: 10rem;
     left: 50%;
-    width: 90%;
     transform: translateX(-50%);
+    width: 90%;
 
-    margin-bottom: 2rem;
-    border-top: 0.1rem solid $color-white;
+    border-bottom: 0.1rem solid $color-white;
     display: flex;
-    list-style: none;
     padding: 0;
     justify-content: space-evenly;
     align-items: stretch;
@@ -22,15 +20,21 @@
 
     &__item {
       position: relative;
-      margin-top: 1.2rem;
       display: inline-block;
+      padding-left: 1rem;
+      padding-bottom: 5rem;
 
+      border: none;
+      transition: all 0.2s;
+      cursor: default;
+
+      // dot over line
       &::after {
         content: "";
         display: inline-block;
         position: absolute;
-        top: -1.9rem;
-        left: 50%;
+        top: 10.2rem;
+        left: -0.5rem;
         width: 1rem;
         height: 1rem;
         background-color: $color-white;
@@ -38,39 +42,98 @@
         cursor: pointer;
       }
 
-      a {
-        text-decoration: none;
+      &__title {
         font-size: 1.2rem;
+        text-transform: capitalize;
+        font-weight: 600;
+        transform: translateY(11.5rem);
         cursor: pointer;
+        transition: all 0.2s;
+
+        overflow: hidden;
+        max-width: 20ch;
+      }
+
+      &__date {
+        font-size: 1rem;
+        font-weight: 400;
+        transform: translateY(11.5rem);
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      &--animated:hover > * {
+        transform: translateY(11.5rem) scale(1.1);
+        backface-visibility: hidden;
+      }
+
+      &--active {
+        cursor: pointer;
+        border-left: 0.1rem solid $color-white;
+        color: $color-white;
+        transition: all 0.2s;
+
+        > * {
+          transform: translateY(0);
+        }
       }
     }
 
     &__navigation {
       display: inline-block;
-      border-left: 0.2rem solid $color-white;
-      border-top: 0.2rem solid $color-white;
-      width: 1.2rem;
-      height: 1.2rem;
+      border-left: 0.1rem solid $color-white;
+      border-top: 0.1rem solid $color-white;
+      width: 0.8rem;
+      height: 0.8rem;
       position: absolute;
-      top: -0.7rem;
+      top: 10.3rem;
       cursor: pointer;
 
       &--left {
         left: 0;
         transform: rotate(-45deg);
+
+        &:hover {
+          transform: scale(1.2) rotate(-45deg);
+        }
       }
 
       &--right {
         position: absolute;
         right: 0;
         transform: rotate(135deg);
+
+        &:hover {
+          transform: scale(1.2) rotate(135deg);
+        }
       }
     }
   }
 
   &__details {
     position: absolute;
-    bottom: 10%;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding-left: 12rem;
+
+    &__title {
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    &__date {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    &__description {
+      display: inline-block;
+      width: 55%;
+      font-size: 1.4rem;
+    }
   }
 }

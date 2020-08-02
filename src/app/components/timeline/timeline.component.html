@@ -1,0 +1,20 @@
+<div class="timeline">
+  <div class="timeline__line">
+    <div
+      (click)="displayEvents('left')"
+      class="timeline__line__navigation timeline__line__navigation--left"
+    ></div>
+    <div class="timeline__line__item" *ngFor="let event of displayingEvents">
+      <a (click)="currentEvent = event">{{ event.date }}</a>
+    </div>
+    <div
+      (click)="displayEvents('right')"
+      class="timeline__line__navigation timeline__line__navigation--right"
+    ></div>
+  </div>
+  <div class="timeline__details">
+    <h2 class="timeline__details__title">{{ currentEvent.title }}</h2>
+    <h3 class="timeline__details__date">{{ currentEvent.date }}</h3>
+    <p class="timeline__details__description">{{ currentEvent.description }}</p>
+  </div>
+</div>

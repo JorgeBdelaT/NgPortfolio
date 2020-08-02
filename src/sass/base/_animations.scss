@@ -30,6 +30,38 @@
   }
 }
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  80% {
+    transform: translateX(0.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+
+  80% {
+    transform: translateX(-0.2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes verticalBoing {
   0% {
     transform: rotate(-135deg) scale(1.5) translateY(0);
@@ -81,5 +113,15 @@
 }
 .scroll-down {
   animation: scrollDown 0.5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.move-in-left {
+  animation: moveInLeft 0.2s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.move-in-right {
+  animation: moveInRight 0.2s ease-out;
   animation-fill-mode: backwards;
 }

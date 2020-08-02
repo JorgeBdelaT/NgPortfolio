@@ -1,2 +1,10 @@
 .experience {
+  &-content {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+
+    width: 95%;
+    height: 94%;
+  }
 }

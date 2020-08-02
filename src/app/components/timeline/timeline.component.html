@@ -1,0 +1,40 @@
+<div class="timeline">
+  <div class="timeline__line">
+    <div
+      *ngIf="displayingEvents[0].id != 0"
+      (click)="displayEvents('left')"
+      class="timeline__line__navigation timeline__line__navigation--left"
+    ></div>
+    <div
+      (click)="currentEvent = event"
+      class="timeline__line__item"
+      *ngFor="let event of displayingEvents"
+      [ngClass]="{
+        'timeline__line__item--active': event.id === currentEvent.id,
+        'timeline__line__item--animated': event.id != currentEvent.id,
+        'move-in-right': moveDir === 'right',
+        'move-in-left': moveDir === 'left'
+      }"
+    >
+      <h4 class="timeline__line__item__title">
+        {{ event.title }}
+      </h4>
+      <h5 class="timeline__line__item__date">
+        {{ event.date }}
+      </h5>
+    </div>
+    <div
+      *ngIf="
+        displayingEvents[displayingEvents.length - 1].id !=
+        events[events.length - 1].id
+      "
+      (click)="displayEvents('right')"
+      class="timeline__line__navigation timeline__line__navigation--right"
+    ></div>
+  </div>
+  <div class="timeline__details">
+    <h2 class="timeline__details__title">{{ currentEvent.title }}</h2>
+    <h3 class="timeline__details__date">{{ currentEvent.date }}</h3>
+    <p class="timeline__details__description">{{ currentEvent.description }}</p>
+  </div>
+</div>

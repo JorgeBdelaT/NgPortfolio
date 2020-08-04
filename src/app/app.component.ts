@@ -32,9 +32,7 @@ export class AppComponent {
 
   getTheme(): string {
     const url = this.router.url;
-    if (url === '/' || url === '/whatido') {
-      return 'dark';
-    } else if (url === '/about' || url === '/skills') {
+    if (url === '/about' || url === '/skills' || url === '/projects') {
       return 'light';
     } else {
       return 'dark';

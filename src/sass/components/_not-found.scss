@@ -1,0 +1,25 @@
+.not-found {
+  color: $color-white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  border: 0.1rem solid $color-primary-light;
+  background-color: $color-primary-light;
+  border-radius: 0.2rem;
+  padding: 2.5rem 3.8rem;
+  box-shadow: 1rem 1rem 0 rgba($color-black, 0.15);
+  text-align: center;
+
+  &__icon {
+    font-size: 6rem;
+  }
+
+  &__message {
+    display: block;
+    font-size: 4.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+  }
+}

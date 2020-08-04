@@ -1,2 +1,97 @@
 .contact {
+  background-color: $color-white;
+  border-radius: 0.2rem;
+  position: fixed;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 47%;
+  box-shadow: 1rem 1rem 1.5rem rgba($color-black, 0.25);
+  padding: 2rem;
+  color: $color-primary-dark;
+
+  &__message {
+    display: inline-block;
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+
+      top: 4.5rem;
+      width: 100%;
+      height: 0.3rem;
+      background-color: $color-primary-dark;
+      border-bottom-right-radius: 20rem;
+    }
+
+    h2 {
+      display: block;
+      font-size: 2.6rem;
+      font-weight: 600;
+
+      &::first-letter {
+        font-size: 3rem;
+        background-color: $color-primary-dark;
+        color: $color-white;
+        display: inline-block;
+        padding: 0.1rem 0.3rem;
+        padding-bottom: 0.3rem;
+        margin-right: 0.2rem;
+      }
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+
+    &:hover {
+      background-color: rgba($color-black, 0.05);
+      transform: translateY(-0.1em);
+
+      .contact__item__tooltip {
+        display: flex;
+      }
+    }
+
+    &__icon {
+      font-size: 2.2rem;
+      margin-right: 1.5rem;
+    }
+
+    &__text {
+      font-size: 1.8rem;
+    }
+
+    a:visited,
+    a:link,
+    a:active {
+      text-transform: capitalize;
+      text-decoration: none;
+      color: $color-primary-dark;
+    }
+
+    &__tooltip {
+      display: none;
+      background-color: $color-primary-dark;
+      color: $color-white;
+      font-weight: 600;
+      font-size: 0.8rem;
+      float: right;
+      margin-top: 0.5rem;
+      width: 12rem;
+      padding: 0.3rem 0.6rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.2rem;
+    }
+  }
 }

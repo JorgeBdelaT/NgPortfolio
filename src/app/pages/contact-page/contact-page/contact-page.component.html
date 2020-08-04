@@ -1,11 +1,27 @@
 <section
-  class="contact"
   [ngClass]="{
     'scroll-up': scrollDirection === 'up',
     'scroll-down': scrollDirection === 'down'
   }"
 >
   <div class="content">
-    <p>contact-page works!</p>
+    <div class="contact">
+      <div class="contact__message">
+        <h2>{{ message }}</h2>
+      </div>
+      <div class="contact__item" *ngFor="let item of networks">
+        <a class="contact__item__text" [href]="item.url" target="blank">
+          <i [class]="'contact__item__icon ' + item.icon"></i>
+          {{ item.text }}
+        </a>
+      </div>
+      <div class="contact__item" (click)="copyEmail()">
+        <span #tooltip class="contact__item__tooltip">{{ tooltipText }}</span>
+        <p class="contact__item__text">
+          <i [class]="'contact__item__icon ' + email.icon"></i>
+          {{ email.text }}
+        </p>
+      </div>
+    </div>
   </div>
 </section>

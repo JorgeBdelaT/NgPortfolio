@@ -1,4 +1,10 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  HostListener,
+  ElementRef,
+  ViewChild,
+} from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -13,6 +19,25 @@ export class ContactPageComponent implements OnInit {
   lastScroll: number;
   justLoaded: boolean;
   scrollDirection: string;
+
+  @ViewChild('tooltip', { static: true }) tooltipRef: ElementRef;
+  emailCopied = false;
+  tooltipText = 'Click to copy to clipboard!';
+
+  message = 'Contact me if you want to work together!';
+  networks = [
+    {
+      text: 'github',
+      url: 'https://github.com/JorgeBdelaT',
+      icon: 'fa fa-github',
+    },
+    {
+      text: 'linkedin',
+      url: 'https://www.linkedin.com/in/jorge-becerra-de-la-torre-aa0181151/',
+      icon: 'fa fa-linkedin-square',
+    },
+  ];
+  email = { text: 'jabecerra@uc.cl', icon: 'fa fa-envelope-o' };
 
   constructor(
     private router: Router,
@@ -55,5 +80,15 @@ export class ContactPageComponent implements OnInit {
     } else {
       this.viewportScroller.scrollToPosition([0, 10]);
     }
+  }
+
+  copyEmail() {
+    navigator.clipboard
+      .writeText(this.email.text)
+      .then(() => {
+        this.tooltipRef.nativeElement.style.display = 'flex';
+        this.tooltipText = 'Email copied to clipboard!';
+      })
+      .catch((e) => console.error(e));
   }
 }

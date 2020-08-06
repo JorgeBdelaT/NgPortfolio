@@ -1,0 +1,12 @@
+<div class="carousel">
+  <ng-template #carouselItems></ng-template>
+  <ul class="carousel__navbar">
+    <li *ngFor="let item of items; let i = index" (click)="onClick(i)">
+      <a
+        [ngClass]="{ 'carousel__navbar-item--active': i === currentIndex }"
+        class="carousel__navbar-item"
+        >{{ i + 1 }}</a
+      >
+    </li>
+  </ul>
+</div>

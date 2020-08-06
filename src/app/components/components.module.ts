@@ -12,6 +12,7 @@ import { CardComponent } from './card/card.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     TimelineComponent,
     CarouselComponent,
     ProjectCardComponent,
+    LoadingComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -36,6 +38,7 @@ import { ProjectCardComponent } from './project-card/project-card.component';
     CardComponent,
     TimelineComponent,
     CarouselComponent,
+    LoadingComponent,
   ],
 })
 export class ComponentsModule {}

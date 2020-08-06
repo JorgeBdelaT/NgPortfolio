@@ -1,0 +1,14 @@
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__spinner {
+    animation: rotateForever $spinner-speed linear infinite;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: inline-block;
+  }
+}

@@ -46,4 +46,9 @@
       }
     }
   }
+
+  .loading__spinner {
+    border: $spinner-thickness solid $color-primary-dark;
+    border-right-color: transparent;
+  }
 }

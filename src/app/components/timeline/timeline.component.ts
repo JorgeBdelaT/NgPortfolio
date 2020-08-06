@@ -21,7 +21,6 @@ export class TimelineComponent implements OnInit {
     this.events.forEach((event, index) => {
       event.index = index;
     });
-    console.log(this.events);
   }
 
   displayEvents(dir: string) {

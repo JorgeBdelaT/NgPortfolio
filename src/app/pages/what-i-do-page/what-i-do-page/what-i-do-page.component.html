@@ -5,9 +5,10 @@
     'scroll-down': scrollDirection === 'down'
   }"
 >
-  <div class="content">
+  <div class="content" *ngIf="!loading">
     <div class="whatido__content">
-      <app-card *ngFor="let card of cards" [card]="card"></app-card>
+      <app-card *ngFor="let card of data" [card]="card"></app-card>
     </div>
   </div>
+  <app-loading *ngIf="loading"></app-loading>
 </section>

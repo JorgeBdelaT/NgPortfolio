@@ -1,7 +1,7 @@
 <div class="timeline">
   <div class="timeline__line">
     <div
-      *ngIf="displayingEvents[0].id != 0"
+      *ngIf="displayingEvents[0].index != 0"
       (click)="displayEvents('left')"
       class="timeline__line__navigation timeline__line__navigation--left"
     ></div>
@@ -10,8 +10,8 @@
       class="timeline__line__item"
       *ngFor="let event of displayingEvents"
       [ngClass]="{
-        'timeline__line__item--active': event.id === currentEvent.id,
-        'timeline__line__item--animated': event.id != currentEvent.id,
+        'timeline__line__item--active': event.index === currentEvent.index,
+        'timeline__line__item--animated': event.index != currentEvent.index,
         'move-in-right': moveDir === 'right',
         'move-in-left': moveDir === 'left'
       }"
@@ -25,8 +25,8 @@
     </div>
     <div
       *ngIf="
-        displayingEvents[displayingEvents.length - 1].id !=
-        events[events.length - 1].id
+        displayingEvents[displayingEvents.length - 1].index !=
+        events[events.length - 1].index
       "
       (click)="displayEvents('right')"
       class="timeline__line__navigation timeline__line__navigation--right"

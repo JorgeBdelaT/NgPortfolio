@@ -9,6 +9,7 @@ import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { NavigationService } from 'src/app/services/navigation.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-contact-page',
@@ -20,34 +21,36 @@ export class ContactPageComponent implements OnInit {
   justLoaded: boolean;
   scrollDirection: string;
 
-  @ViewChild('tooltip', { static: true }) tooltipRef: ElementRef;
+  @ViewChild('tooltip', { static: false }) tooltipRef: ElementRef;
   emailCopied = false;
   tooltipText = 'Click to copy to clipboard!';
 
   message = 'Contact me if you want to work together!';
-  networks = [
-    {
-      text: 'github',
-      url: 'https://github.com/JorgeBdelaT',
-      icon: 'fa fa-github',
-    },
-    {
-      text: 'linkedin',
-      url: 'https://www.linkedin.com/in/jorge-becerra-de-la-torre-aa0181151/',
-      icon: 'fa fa-linkedin-square',
-    },
-  ];
-  email = { text: 'jabecerra@uc.cl', icon: 'fa fa-envelope-o' };
+  networks;
+  email;
+
+  data = [];
+  loading = true;
 
   constructor(
     private router: Router,
     private viewportScroller: ViewportScroller,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private firestoreService: FirestoreService
   ) {
     this.justLoaded = true;
   }
 
   ngOnInit(): void {
+    this.firestoreService.getResources('networks').subscribe((dataSnapshot) => {
+      dataSnapshot.forEach((projectData: any) => {
+        this.data.push(projectData.payload.doc.data());
+        this.email = this.data.filter((data) => data.email)[0];
+        this.networks = this.data.filter((data) => !data.email);
+        this.loading = false;
+      });
+    });
+
     this.lastScroll =
       window.pageYOffset ||
       document.documentElement.scrollTop ||

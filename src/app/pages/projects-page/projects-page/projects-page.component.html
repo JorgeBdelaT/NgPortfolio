@@ -5,7 +5,8 @@
     'scroll-down': scrollDirection === 'down'
   }"
 >
-  <div class="content">
+  <div class="content" *ngIf="!loading">
     <app-carousel [items]="data"></app-carousel>
   </div>
+  <app-loading *ngIf="loading"></app-loading>
 </section>

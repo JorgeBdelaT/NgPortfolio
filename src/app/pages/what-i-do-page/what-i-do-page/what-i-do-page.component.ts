@@ -3,6 +3,7 @@ import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { NavigationService } from 'src/app/services/navigation.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-what-i-do-page.component',
@@ -14,36 +15,26 @@ export class WhatIDoPageComponent implements OnInit {
   justLoaded: boolean;
   scrollDirection: string;
 
-  cards = [
-    {
-      title: 'web development',
-      icon: 'fa fa-code',
-      content:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facere vero quia molestias explicabo sunt autem cumque voluptatum eius repudiandae. Rem nisi in dolor cupiditate nesciunt officia quibusdam iste nam.',
-    },
-    {
-      title: 'web architecture',
-      icon: 'fa fa-cubes',
-      content:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facere vero quia molestias explicabo sunt autem cumque voluptatum eius repudiandae. Rem nisi in dolor cupiditate nesciunt officia quibusdam iste nam.',
-    },
-    {
-      title: 'user centered design',
-      icon: 'fa fa-users',
-      content:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facere vero quia molestias explicabo sunt autem cumque voluptatum eius repudiandae. Rem nisi in dolor cupiditate nesciunt officia quibusdam iste nam.',
-    },
-  ];
+  data = [];
+  loading = true;
 
   constructor(
     private router: Router,
     private viewportScroller: ViewportScroller,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private firestoreService: FirestoreService
   ) {
     this.justLoaded = true;
   }
 
   ngOnInit(): void {
+    this.firestoreService.getResources('whatido').subscribe((dataSnapshot) => {
+      dataSnapshot.forEach((item: any) => {
+        this.data.push(item.payload.doc.data());
+        this.loading = false;
+      });
+    });
+
     this.lastScroll =
       window.pageYOffset ||
       document.documentElement.scrollTop ||

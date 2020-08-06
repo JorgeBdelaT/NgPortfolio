@@ -3,6 +3,7 @@ import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { NavigationService } from 'src/app/services/navigation.service';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-about-me-page',
@@ -14,15 +15,27 @@ export class AboutMePageComponent implements OnInit {
   justLoaded: boolean;
   scrollDirection: string;
 
+  data = [];
+  loading = true;
+
   constructor(
     private router: Router,
     private viewportScroller: ViewportScroller,
-    private navigationService: NavigationService
+    private navigationService: NavigationService,
+    private firestoreService: FirestoreService
   ) {
     this.justLoaded = true;
   }
 
   ngOnInit(): void {
+    this.firestoreService.getResources('aboutme').subscribe((dataSnapshot) => {
+      dataSnapshot.forEach((eventData: any) => {
+        this.data = eventData.payload.doc.data().paragraphs;
+
+        this.loading = false;
+      });
+    });
+
     this.lastScroll =
       window.pageYOffset ||
       document.documentElement.scrollTop ||

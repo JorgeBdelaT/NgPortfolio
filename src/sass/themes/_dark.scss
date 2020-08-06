@@ -38,4 +38,9 @@
       }
     }
   }
+
+  .loading__spinner {
+    border: $spinner-thickness solid $color-white;
+    border-right-color: transparent;
+  }
 }

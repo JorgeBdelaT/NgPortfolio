@@ -5,28 +5,15 @@
     'scroll-down': scrollDirection === 'down'
   }"
 >
-  <div class="content">
+  <div class="content" *ngIf="!loading">
     <div class="about-content">
       <div class="about-content__text-box">
         <h2 class="about-content__text-box__title">About Me</h2>
-        <p class="about-content__text-box__paragraph">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde neque
-          laudantium, fugiat eaque dolor sit amet consectetur adipisicing elit.
-          Reprehenderit facere harum, quos doloribus nobis quia iste, officia,
-          ratione ab quam ea? Maiores repellat atque eveniet deserunt eos odit
-          optio fugit?
-        </p>
-        <p class="about-content__text-box__paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio neque
-          necessitatibus reiciendis nulla! Odio vero ipsum laborum sunt quae
-          ducimus! Eius dolorem eos obcaecati sint voluptate necessitatibus
-          recusandae, cumque deleniti.
-        </p>
-        <p class="about-content__text-box__paragraph">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam eum
-          rem inventore quia qui aliquid provident voluptas reiciendis
-          accusantium numquam quaerat, minus fugit quae nulla maxime quisquam
-          odio porro corrupti.
+        <p
+          class="about-content__text-box__paragraph"
+          *ngFor="let paragraph of data"
+        >
+          {{ paragraph }}
         </p>
       </div>
 
@@ -39,4 +26,5 @@
       </div>
     </div>
   </div>
+  <app-loading *ngIf="loading"></app-loading>
 </section>

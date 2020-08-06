@@ -10,6 +10,8 @@ import { TypingBoxComponent } from './typing-box/typing-box.component';
 import { TypingComponent } from './typing-box/typing/typing.component';
 import { CardComponent } from './card/card.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { TimelineComponent } from './timeline/timeline.component';
     TypingComponent,
     CardComponent,
     TimelineComponent,
+    CarouselComponent,
+    ProjectCardComponent,
   ],
   imports: [CommonModule, RouterModule],
   exports: [
@@ -31,6 +35,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     TypingBoxComponent,
     CardComponent,
     TimelineComponent,
+    CarouselComponent,
   ],
 })
 export class ComponentsModule {}

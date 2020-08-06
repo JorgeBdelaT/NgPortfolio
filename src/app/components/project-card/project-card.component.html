@@ -1,0 +1,36 @@
+<div class="project-card__wrapper zoom-in">
+  <div
+    class="project-card"
+    [ngClass]="{
+      'project-card--left': type === 'left',
+      'project-card--right': type === 'right',
+      'project-card--down': type === 'down'
+    }"
+  >
+    <ng-container *ngIf="type === 'left'">
+      <h2 class="project-card__title">{{ data.title }}</h2>
+      <p class="project-card__description">
+        {{ data.description }}
+      </p>
+      <a [href]="data.link" target="blank" class="project-card__link">
+        Visit site
+        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+      </a>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'right'">
+      <div class="project-card__image-box">
+        <img [src]="data.img" alt="" class="project-card__image" />
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'down'">
+      <h3 class="project-card__subtitle">What i did...</h3>
+      <ol class="project-card__list">
+        <li class="project-card__list-item" *ngFor="let task of data.tasks">
+          {{ task }}
+        </li>
+      </ol>
+    </ng-container>
+  </div>
+</div>

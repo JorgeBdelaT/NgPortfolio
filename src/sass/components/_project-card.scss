@@ -1,0 +1,201 @@
+.project-card {
+  min-height: 10rem; // develop
+  background-color: $color-white;
+  border-radius: 0.3rem;
+  box-shadow: 0rem 0rem 1rem 0.3rem rgba($color-black, 0.15);
+  position: absolute;
+  padding: 1rem;
+
+  &__wrapper {
+    z-index: 1;
+    // overflow: visible;
+  }
+
+  &--left {
+    top: 4rem;
+    left: 4rem;
+    width: 40%;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 20rem;
+      background-image: $color-gradient-main;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0.8rem;
+      left: 0.8rem;
+      border-radius: 0.3rem;
+      background-image: $color-gradient-main;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      // animation: pseudoDelay 0.2s 0.3s backwards;
+    }
+  }
+
+  &--right {
+    top: 8rem;
+    right: 4rem;
+    width: 45%;
+    padding: 0rem;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 20rem;
+      background-image: $color-gradient-main;
+      transform: translate(50%, -50%);
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0.8rem;
+      left: -0.8rem;
+      border-radius: 0.3rem;
+      background-image: $color-gradient-main;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transform: rotate(180deg);
+    }
+  }
+
+  &--down {
+    bottom: 0rem;
+    left: 7rem;
+    width: 45%;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 20rem;
+      background-image: $color-gradient-main;
+      transform: translate(-50%, 50%);
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: -0.8rem;
+      left: 0.8rem;
+      border-radius: 0.3rem;
+      background-image: $color-gradient-main;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    display: inline;
+    color: $color-white;
+    background-image: $color-gradient-main;
+    text-transform: capitalize;
+    font-size: 3.2rem;
+    font-weight: 400;
+    padding: 0;
+    padding-left: 0.8rem;
+    padding-right: 4rem;
+    text-align: left;
+    letter-spacing: 0.1rem;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 400;
+    color: $color-primary-dark;
+    margin-bottom: 1.2rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      height: 0.2rem;
+      width: 5rem;
+      margin-top: -0.5rem;
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &__description {
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+    color: $color-primary-dark;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      display: inline-block;
+      background-color: $color-primary-light;
+      color: $color-white;
+      font-size: 1.4rem;
+      padding: 0.2rem 0.6rem;
+    }
+
+    &:active {
+      transform: translateY(2rem);
+    }
+
+    &:hover {
+      background-color: darken($color-primary-light, 5);
+      transform: translateY(-0.2rem);
+    }
+  }
+
+  &__image-box {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.2rem;
+    height: 25rem;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+
+  &__list {
+    list-style: inside;
+    list-style-type: square;
+    font-size: 1rem;
+    color: $color-primary-dark;
+
+    &-item {
+      margin-bottom: 0.4rem;
+    }
+  }
+}

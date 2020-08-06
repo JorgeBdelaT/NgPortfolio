@@ -16,6 +16,7 @@
     left: 4rem;
     width: 40%;
     padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 2rem;
 
     &::after {
@@ -85,7 +86,9 @@
   &--down {
     bottom: 0rem;
     left: 7rem;
-    width: 45%;
+    max-width: 55%;
+    padding: 1rem 2rem;
+    // height: 35rem;
 
     &::after {
       content: "";
@@ -135,7 +138,7 @@
     font-size: 2rem;
     font-weight: 400;
     color: $color-primary-dark;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.8rem;
 
     &::after {
       content: "";
@@ -193,6 +196,12 @@
     list-style-type: square;
     font-size: 1rem;
     color: $color-primary-dark;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 3rem;
+    grid-template-areas: ". .";
 
     &-item {
       margin-bottom: 0.4rem;

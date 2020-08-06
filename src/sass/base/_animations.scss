@@ -116,6 +116,15 @@
   }
 }
 
+@keyframes rotateForever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .scroll-up {
   animation: scrollUp 0.5s ease-out;
   animation-fill-mode: backwards;

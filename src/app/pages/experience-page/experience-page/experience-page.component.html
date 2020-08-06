@@ -5,9 +5,10 @@
     'scroll-down': scrollDirection === 'down'
   }"
 >
-  <div class="content">
+  <div class="content" *ngIf="!loading">
     <div class="experience-content">
       <app-timeline [events]="data"></app-timeline>
     </div>
   </div>
+  <app-loading *ngIf="loading"></app-loading>
 </section>

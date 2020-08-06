@@ -29,7 +29,6 @@ export class ProjectsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.firestoreService.getResources('projects').subscribe((dataSnapshot) => {
-      this.data = [];
       dataSnapshot.forEach((projectData: any) => {
         this.data.push({
           id: projectData.payload.doc.id,

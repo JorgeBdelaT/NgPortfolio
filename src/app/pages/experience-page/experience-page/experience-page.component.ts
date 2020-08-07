@@ -36,8 +36,8 @@ export class ExperiencePageComponent implements OnInit {
         });
 
         this.data.sort((a, b) => {
-          if (a.start.seconds > b.start.seconds) return 1;
-          if (b.start.seconds > a.start.seconds) return -1;
+          if (a.start.seconds < b.start.seconds) return 1;
+          if (b.start.seconds < a.start.seconds) return -1;
 
           return 0;
         });

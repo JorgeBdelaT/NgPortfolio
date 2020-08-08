@@ -3,9 +3,8 @@
 
   .sidebar__link,
   .sidebar__link::after {
-    border-top: 0.2rem double $color-primary-dark;
-    border-left: 0.2rem double $color-primary-dark;
-    // border-width: thin;
+    border-top: 2px double $color-primary-dark;
+    border-left: 2px double $color-primary-dark;
   }
 
   .header__logo {

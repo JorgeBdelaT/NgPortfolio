@@ -1,5 +1,4 @@
 .project-card {
-  min-height: 10rem; // develop
   background-color: $color-white;
   border-radius: 0.3rem;
   box-shadow: 0rem 0rem 1rem 0.3rem rgba($color-black, 0.15);
@@ -8,7 +7,6 @@
 
   &__wrapper {
     z-index: 1;
-    // overflow: visible;
   }
 
   &--left {
@@ -18,6 +16,15 @@
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
+
+    @include media-query(1100) {
+      top: 0;
+      left: 0;
+    }
+
+    @include media-query(1700) {
+      left: 10rem;
+    }
 
     &::after {
       content: "";
@@ -54,6 +61,14 @@
     width: 45%;
     padding: 0rem;
 
+    @include media-query(1100) {
+      top: 0;
+    }
+
+    @include media-query(1700) {
+      right: 0;
+    }
+
     &::after {
       content: "";
       display: inline-block;
@@ -66,6 +81,11 @@
       background-image: $color-gradient-main;
       transform: translate(50%, -50%);
       z-index: -1;
+
+      @include media-query(1100) {
+        width: 4rem;
+        height: 4rem;
+      }
     }
 
     &::before {
@@ -89,6 +109,18 @@
     max-width: 55%;
     padding: 1rem 2rem;
     // height: 35rem;
+
+    @include media-query(1100) {
+      left: 2rem;
+    }
+
+    @include media-query(1700) {
+      left: 12rem;
+    }
+
+    @include media-query(2100) {
+      max-width: 64%;
+    }
 
     &::after {
       content: "";
@@ -130,6 +162,18 @@
     padding-right: 4rem;
     text-align: left;
     letter-spacing: 0.1rem;
+
+    @include media-query(1100) {
+      font-size: 2.6rem;
+    }
+
+    @include media-query(1000) {
+      font-size: 2.2rem;
+    }
+
+    @include media-query(1500) {
+      font-size: 3.4rem;
+    }
   }
 
   &__subtitle {
@@ -140,6 +184,18 @@
     color: $color-primary-dark;
     margin-bottom: 1.8rem;
 
+    @include media-query(1100) {
+      font-size: 1.8rem;
+    }
+
+    @include media-query(1700) {
+      font-size: 2.4rem;
+    }
+
+    @include media-query(2100) {
+      font-size: 2.6rem;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -148,6 +204,10 @@
       width: 5rem;
       margin-top: -0.5rem;
       background-color: $color-primary-dark;
+
+      @include media-query(1100) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -155,6 +215,10 @@
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
     color: $color-primary-dark;
+
+    @include media-query(1100) {
+      margin-top: 1.2rem;
+    }
   }
 
   &__link {
@@ -166,6 +230,22 @@
       color: $color-white;
       font-size: 1.4rem;
       padding: 0.2rem 0.6rem;
+
+      @include media-query(1100) {
+        font-size: 1.2rem;
+      }
+
+      @include media-query(1000) {
+        font-size: 0.8rem;
+      }
+
+      @include media-query(1700) {
+        font-size: 1.6rem;
+      }
+
+      @include media-query(2100) {
+        font-size: 1.8rem;
+      }
     }
 
     &:active {
@@ -183,6 +263,22 @@
     overflow: hidden;
     border-radius: 0.2rem;
     height: 25rem;
+
+    @include media-query(1100) {
+      height: 22rem;
+    }
+
+    @include media-query(1000) {
+      height: 19rem;
+    }
+
+    @include media-query(1700) {
+      height: 30rem;
+    }
+
+    @include media-query(2100) {
+      height: 40rem;
+    }
   }
 
   &__image {
@@ -205,6 +301,22 @@
 
     &-item {
       margin-bottom: 0.4rem;
+    }
+
+    @include media-query(1000) {
+      font-size: 0.8rem;
+    }
+
+    @include media-query(1500) {
+      font-size: 1.2rem;
+    }
+
+    @include media-query(1700) {
+      font-size: 1.4rem;
+    }
+
+    @include media-query(2100) {
+      font-size: 1.6rem;
     }
   }
 }

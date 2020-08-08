@@ -2,8 +2,8 @@
   background-image: $color-gradient-main;
   .sidebar__link,
   .sidebar__link::after {
-    border-top: 0.2rem double $color-white;
-    border-left: 0.2rem double $color-white;
+    border-top: 2px double $color-white;
+    border-left: 2px double $color-white;
   }
 
   .header__logo {

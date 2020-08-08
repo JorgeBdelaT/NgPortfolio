@@ -12,6 +12,10 @@
     border-radius: 2px;
     width: 50%;
 
+    @include media-query(1100) {
+      padding: 2rem 3rem;
+    }
+
     &__section {
       position: relative;
       margin-bottom: 2rem;
@@ -23,6 +27,22 @@
         font-weight: 600;
         position: relative;
 
+        @include media-query(1100) {
+          font-size: 1.4rem;
+        }
+
+        @include media-query(1000) {
+          font-size: 1.2rem;
+        }
+
+        @include media-query(1700) {
+          font-size: 1.8rem;
+        }
+
+        @include media-query(2100) {
+          font-size: 2.2rem;
+        }
+
         &::after {
           content: "";
           display: inline-block;
@@ -32,6 +52,22 @@
           width: 4rem;
           height: 0.2rem;
           background-color: $color-primary-dark;
+
+          @include media-query(1100) {
+            top: 2.4rem;
+          }
+
+          @include media-query(1000) {
+            top: 2rem;
+          }
+
+          @include media-query(1700) {
+            top: 3rem;
+          }
+
+          @include media-query(2100) {
+            top: 3.3rem;
+          }
         }
       }
 
@@ -44,6 +80,22 @@
         &__item {
           font-weight: 400;
           font-size: 1.2rem;
+
+          @include media-query(1100) {
+            font-size: 1rem;
+          }
+
+          @include media-query(1000) {
+            font-size: 0.8rem;
+          }
+
+          @include media-query(1700) {
+            font-size: 1.4rem;
+          }
+
+          @include media-query(2100) {
+            font-size: 1.6rem;
+          }
         }
       }
     }

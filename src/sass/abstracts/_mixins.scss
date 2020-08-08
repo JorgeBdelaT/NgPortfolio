@@ -12,3 +12,54 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*
+Media query manager
+
+Development screen size: 1270px
+
+Defined breakpoints
+
+max width of:
+- 350
+- 450
+- 550
+- 650
+- 750
+- 850
+- 950
+- 1050
+- 1150
+- 1250
+
+min width of:
+- 1350
+- 1450
+- 1550
+- 1650
+- 1750
+- 1850
+- 1950
+- 2200
+- 2500
+
+########################
+
+1em = 16px
+*/
+
+@mixin media-query($breakpoint) {
+  $develop-screen-width: 1270;
+
+  @if $breakpoint < $develop-screen-width {
+    @media (max-width: $breakpoint / 16 * 1em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint > $develop-screen-width {
+    @media (min-width: $breakpoint / 16 * 1em) {
+      @content;
+    }
+  }
+}

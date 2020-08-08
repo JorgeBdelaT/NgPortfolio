@@ -12,6 +12,14 @@
   padding-top: 1rem;
   z-index: 10;
 
+  @include media-query(1100) {
+    width: $navbar-width * 0.8;
+  }
+
+  @include media-query(1700) {
+    width: $navbar-width * 1.2;
+  }
+
   &__item {
     margin-right: 2.2rem;
     font-size: 1.2rem;
@@ -20,9 +28,26 @@
 
     font-weight: 400;
     transition: all 0.2s;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     margin-bottom: 1rem;
     border-bottom: 1px solid transparent;
+
+    @include media-query(1100) {
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    @include media-query(1000) {
+      font-size: 0.8rem;
+    }
+
+    @include media-query(1700) {
+      font-size: 1.5rem;
+    }
+
+    @include media-query(2100) {
+      font-size: 1.7rem;
+    }
 
     :last-child {
       margin-bottom: 0;

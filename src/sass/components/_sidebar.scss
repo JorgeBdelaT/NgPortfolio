@@ -8,10 +8,33 @@
   justify-content: center;
   z-index: 10;
 
+  @include media-query(1100) {
+    width: $sidebar-width * 0.8;
+  }
+
+  @include media-query(2100) {
+    width: $sidebar-width * 1.2;
+  }
+
   &__link {
     text-align: center;
     width: 2rem;
     height: 2rem;
+
+    @include media-query(1100) {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    @include media-query(1700) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    @include media-query(2300) {
+      width: 3rem;
+      height: 3rem;
+    }
 
     &::after {
       content: "";
@@ -56,8 +79,12 @@
       right: 50%;
       transform: rotate(-135deg) scale(1.5);
 
+      @include media-query(2300) {
+        bottom: 4rem;
+      }
+
       &:hover {
-        animation: none;
+        animation: blink 2s infinite;
         transform: rotate(-135deg) scale(1.8);
       }
 

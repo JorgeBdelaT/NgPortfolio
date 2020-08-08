@@ -64,6 +64,10 @@
       bottom: 3rem;
       transform: rotate(-135deg);
 
+      @include media-query(1900) {
+        bottom: 4rem;
+      }
+
       &:active {
         transform: scale(1.05) translateY(0.7rem) rotate(-135deg);
       }

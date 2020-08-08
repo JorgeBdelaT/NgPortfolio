@@ -8,4 +8,28 @@ body {
 
 p {
   font-size: 1.2rem;
+
+  @include media-query(1100) {
+    font-size: 1rem;
+  }
+
+  @include media-query(1000) {
+    font-size: 0.85rem;
+  }
+
+  @include media-query(1500) {
+    font-size: 1.4rem;
+  }
+
+  @include media-query(1700) {
+    font-size: 1.55rem;
+  }
+
+  @include media-query(2100) {
+    font-size: 1.75rem;
+  }
+
+  @include media-query(2300) {
+    font-size: 1.85rem;
+  }
 }

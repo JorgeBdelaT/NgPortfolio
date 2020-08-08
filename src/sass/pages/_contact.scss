@@ -10,9 +10,16 @@
   padding: 2rem;
   color: $color-primary-dark;
 
+  @include media-query(1100) {
+    width: 50%;
+  }
+
+  @include media-query(1700) {
+    width: 44%;
+  }
+
   &__message {
     display: inline-block;
-    font-size: 2.6rem;
     margin-bottom: 2rem;
     position: relative;
 
@@ -26,12 +33,44 @@
       height: 0.3rem;
       background-color: $color-primary-dark;
       border-bottom-right-radius: 20rem;
+
+      @include media-query(1700) {
+        top: 6rem;
+      }
+
+      @include media-query(1900) {
+        top: 5.8rem;
+      }
+
+      @include media-query(2100) {
+        top: 6.5rem;
+      }
     }
 
     h2 {
       display: block;
       font-size: 2.6rem;
       font-weight: 600;
+
+      @include media-query(1100) {
+        font-size: 2.4rem;
+      }
+
+      @include media-query(1000) {
+        font-size: 2rem;
+      }
+
+      @include media-query(1500) {
+        font-size: 3rem;
+      }
+
+      @include media-query(1700) {
+        font-size: 3.2rem;
+      }
+
+      @include media-query(2100) {
+        font-size: 3.6rem;
+      }
 
       &::first-letter {
         font-size: 3rem;
@@ -41,6 +80,14 @@
         padding: 0.1rem 0.3rem;
         padding-bottom: 0.3rem;
         margin-right: 0.2rem;
+
+        @include media-query(1700) {
+          font-size: 4rem;
+        }
+
+        @include media-query(2100) {
+          font-size: 4.4rem;
+        }
       }
     }
   }
@@ -52,6 +99,12 @@
     padding-left: 3rem;
     margin-bottom: 1rem;
     position: relative;
+
+    @include media-query(1100) {
+      padding: 0.8rem;
+      padding-left: 2rem;
+      margin-bottom: 0.8rem;
+    }
 
     &:hover {
       background-color: rgba($color-black, 0.05);
@@ -65,10 +118,34 @@
     &__icon {
       font-size: 2.2rem;
       margin-right: 1.5rem;
+
+      @include media-query(1100) {
+        font-size: 2rem;
+      }
+
+      @include media-query(1500) {
+        font-size: 2.5rem;
+      }
+
+      @include media-query(2100) {
+        font-size: 2.8rem;
+      }
     }
 
     &__text {
       font-size: 1.8rem;
+
+      @include media-query(1100) {
+        font-size: 1.4rem;
+      }
+
+      @include media-query(1500) {
+        font-size: 2rem;
+      }
+
+      @include media-query(2100) {
+        font-size: 2.6rem;
+      }
     }
 
     a:visited,
@@ -92,6 +169,16 @@
       justify-content: center;
       align-items: center;
       border-radius: 0.2rem;
+
+      @include media-query(1000) {
+        margin-top: 0.2rem;
+      }
+
+      @include media-query(2100) {
+        font-size: 1.2rem;
+        width: 16rem;
+        margin-top: 0.8rem;
+      }
     }
   }
 }

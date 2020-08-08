@@ -7,6 +7,14 @@
   transform: translate(-50%, -50%);
   width: 40rem;
 
+  @include media-query(1700) {
+    width: 50rem;
+  }
+
+  @include media-query(2100) {
+    width: 55rem;
+  }
+
   @include media-query(2200) {
     width: 60rem;
   }
@@ -24,6 +32,16 @@
   box-sizing: border-box;
   padding-right: 4px;
   height: 2.3rem;
+
+  @include media-query(1100) {
+    font-size: 1.5rem;
+    height: 2rem;
+  }
+
+  @include media-query(1700) {
+    font-size: 2rem;
+    height: 2.7rem;
+  }
 
   @include media-query(2200) {
     font-size: 2.5rem;
